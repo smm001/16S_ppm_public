@@ -12,10 +12,12 @@ The Oxford Nanopore Technologies (ONT) MinION sequencer, is a portable and affor
  
 
 ## Quick start-up: Usage
-The 16S_ppm pipeline can run in three mods: 
+The 16S_ppm pipeline can run in two mods: 
+\
 *(i)* from nucleotide sequences (in fasta format); it returns the taxonomic classification (output folder: inputname_results_fromfasta)
+\
 *(ii)* from nucleotide sequences with quality scores (in fastq format); it returns the taxonomic classification (output folder: inputname_results_fromfasta)
-*(iii)* from raw sequencing files (fast5, from the MinION sequencer); NOT AVAILABLE here (.. requires ONT authorization ..)
+\
 
 To run *(i)*: 
 #### python run_from_fasta.py input.fasta    
@@ -33,13 +35,13 @@ Blastn 2.9.0 (or newer)
 ### Optional dependencies 
 Porechop, Filtlong (or Nanofilt). 
 
-Nanofilt (version 2.5.0, or newer) or Filtlong (v0.2.0, or newer) are used for fastq filtering (quality of reads, minimum length); Porechop, for adapter removal. They contribute to the pipeline only if you run a complete workflow with fast5, and wish to filter reads (by quality filtering and/or barcode sequence removal) after basecalling and before classification; this step is not necessary. These programs are available at Porechop (https://github.com/rrwick/Porechop) and Filtlong (https://github.com/rrwick/Filtlong); if you don't have these two programs already installed, binaries of Porechop and Filtlong (both with GNU licences) are provided with this distribution (in bin subfolder, with paths accordingly set in the configuration file); blastn (with its NCBI license) executable is also included (in bin subfolder). These programs should work "out of the box" (if activated; see configuration file, below).
+Nanofilt (version 2.5.0, or newer) or Filtlong (v0.2.0, or newer) are used for fastq filtering (quality of reads, minimum length); Porechop, for adapter removal. They contribute to the pipeline only if you wish to filter reads (by quality and size and/or barcode sequence removal) after basecalling and before classification; this step is not necessary. These two external programs are available at Porechop (https://github.com/rrwick/Porechop) and Filtlong (https://github.com/rrwick/Filtlong); if you don't have these two programs already installed, binaries of Porechop and Filtlong (both with GNU licences) are provided with this distribution (in bin subfolder, with paths accordingly set in the configuration file); blastn (with its NCBI license) executable is also included (in bin subfolder). These programs should work "out of the box" (if activated; see configuration file, below).
 \
 
 
 ### Configuration file 
 The analysis can be customized via the configuration file (in the root folder of the pipeline, e.g. /home/user/16S_ppm/configuration.cfg). This file is meant to configure a "ready to go" pipeline.
-The options are important to tailor the search: for instance, the blast searches can be significantly customized, with max target options, e-value, coverage, etc. Similarly the quality filtering of reads, can be adjusted for strict or relaxed (or deactivated). Additionally, the number of fasta sequences to be classified can be set to a specific value: by default, the run_with_basecall.py script considers 20,000 fasta sequences for each barcode; this is set by the max_num_fasta parameter. The 20,000 choice allows for fast investigations, and on a standard (mid-range) laptop: thus, the default set up employs a parameterization scheme specifically optimized for this task. The parameters can be adjusted for different needs, including long and comprehensive calculations; it has to be noted that pushing the parameters toward more extensive searches, can significantly impact the run-time, and, in case of a standard laptop, the available computational resources. This is particularly true for some parameters, e.g.  max_t  (suggested range:  5 ≤ value  ≤ 75) and max_num_fasta (suggested range:  20,000 ≤ value ≤ 100,000). A combination of the two such as max_t=75 and max_num_fasta = 150,000 could be considered (indicatively) as a borderline scenario (more “expensive” values, will  be better suited for a server calculation, or high-end workstations). On the other hand, with max_t=5 and max_num_fasta=20,000 (for quick, albeit less accurate calculations) the analysis can run also on low-end/old notebooks.
+The options are important to tailor the search: for instance, the blast searches can be significantly customized, with max target options, e-value, coverage, etc. Similarly the quality filtering of reads, can be adjusted for strict or relaxed (or deactivated). Additionally, the number of fasta sequences to be classified can be set to a specific value: by default, the run_with_basecall.py script considers 20,000 fasta sequences for each barcode; this is set by the max_num_fasta parameter. The 20,000 choice allows for fast investigations, and on a standard (mid-range) laptop: thus, the default set up employs a parameterization scheme specifically optimized for this task. The parameters can be adjusted for different needs, including long and comprehensive calculations; it has to be noted that pushing the parameters toward more extensive searches, can significantly impact the run-time, and, in case of a standard laptop, the available computational resources. This is particularly true for some parameters, e.g.  max_t  (suggested range:  5 ≤ value  ≤ 75) and max_num_fasta (suggested range:  20,000 ≤ value ≤ 100,000). A combination of the two such as max_t=75 and max_num_fasta = 150,000 could be considered (indicatively) as a borderline scenario (more “expensive” values, will  be better suited for a server calculation, or high-end workstations). On the other hand, with max_t=5 and max_num_fasta=20,000 (for quick and indicative, albeit less accurate, calculations) the analysis can run also on low-end/old notebooks.
 The list of options available in the configuration file are detailed below (after "----->" comments for this document, not present in the cfg file). 
 \
 \
