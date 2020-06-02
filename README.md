@@ -8,7 +8,7 @@ The  **16S_ppm pipeline** is an accompanying set of scripts for the paper *“A 
 
 The Oxford Nanopore Technologies (ONT) MinION sequencer, is a portable and affordable device, that produces long reads. Its application is well suited for *in situ* sequencing, e.g. for field work, analyzing environmental samples. One of the most common approaches in this area is the analysis of the 16S rRNA gene (a trademark of prokaryotes), known as 16S metabarcoding. The  16S_ppm pipeline, available here is specifically tailored to ONT long reads in 16S metabarcoding. The general structure of the 16S_ppm work-flow is shown in the following scheme. 
 
-![Test Image 2](img/Img_pipe_v3.jpg)
+![Test Image 2](img/Img_pipe_v3.jpeg)
  
 
 ## Quick start-up: Usage
