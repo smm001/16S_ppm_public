@@ -1,7 +1,7 @@
 
 ![Test Image 1](img/logo_temp0.jpg)
 
-The  **16S_ppm pipeline** is an accompanying set of scripts for the paper *“A computational strategy for rapid on-site 16S metabarcoding with Oxford Nanopore sequencing”* (manuscript in preparation; pre-print available at https://www.biorxiv.org/content/10.1101/2020.08.25.267591v1). 
+The  **16S_ppm pipeline** is an accompanying set of scripts for the paper *“A computational strategy for rapid on-site 16S metabarcoding with Oxford Nanopore sequencing”* (manuscript in preparation). 
 Author: Stefano M. Marino, PhD
 
 
