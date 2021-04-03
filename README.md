@@ -20,8 +20,8 @@ The 16S_ppm pipeline can run in two mods:
 *(ii)* from nucleotide sequences with quality scores (in fastq format); it returns the taxonomic classification (output folder: inputname_results_fromfasta)
 \
 \
-If you need to run the pipeline on raw sequencing data, a version can be found here https://github.com/smm001/16S_ppm_complete/
-\
+ - - NOTE: If you would like to run this pipeline on raw sequencing data see https://github.com/smm001/16S_ppm_complete/ (see the corresponding Readme file)
+ 
 
 To run *(i)*: 
 #### python run_from_fasta.py input.fasta    
@@ -31,7 +31,7 @@ To run *(ii)*:
   
 Once the 16S_ppm folder is downloaded (e.g. in /home/user/, creating a working folder /home/user/16S_ppm) the pipeline should be ready to run (if not, check all scripts have permissions to run; else, set with chmod -R).
 
-### Requirments
+### Requirements
 Python 3 (3.4 or newer)
 Python 2 (2.7 or newer)
 Blastn 2.9.0 (or newer)
