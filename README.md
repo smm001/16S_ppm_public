@@ -19,6 +19,9 @@ The 16S_ppm pipeline can run in two mods:
 \
 *(ii)* from nucleotide sequences with quality scores (in fastq format); it returns the taxonomic classification (output folder: inputname_results_fromfasta)
 \
+\
+If you need to run the pipeline on raw sequencing data, a version can be found here https://github.com/smm001/16S_ppm_complete/
+\
 
 To run *(i)*: 
 #### python run_from_fasta.py input.fasta    
